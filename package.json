@@ -4,8 +4,21 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "node scripts/validate-static.mjs",
+    "build": "node scripts/validate-static.mjs && npm run contracts:compile",
+    "contracts:compile": "hardhat compile",
+    "contracts:test": "hardhat test",
+    "contracts:deploy:amoy": "hardhat run scripts/deploy-amoy.mjs --network polygonAmoy",
     "poc:wallet": "node scripts/generate-poc-wallet.mjs",
     "poc:check": "node scripts/check-poc-env.mjs"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.11",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.5",
+    "@nomicfoundation/hardhat-verify": "^3.0.17",
+    "hardhat": "^3.4.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.6.1",
+    "dotenv": "^17.2.3"
   }
 }

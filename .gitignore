@@ -4,6 +4,9 @@
 !.env.poc.example
 node_modules/
 package-lock.json
+artifacts/
+cache/
+types/
 .symphony-logs/
 .symphony-workspaces/
 dist/
