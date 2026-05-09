@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/validate-static.mjs && npm run contracts:compile",
+    "backend:test": "node --test test/tokenization-backend.test.js",
     "contracts:compile": "hardhat compile",
-    "contracts:test": "hardhat test",
+    "contracts:test": "hardhat test test/deal-token-poc.test.js",
+    "test": "npm run backend:test && npm run contracts:test",
     "contracts:deploy:amoy": "hardhat run scripts/deploy-amoy.mjs --network polygonAmoy",
     "poc:wallet": "node scripts/generate-poc-wallet.mjs",
     "poc:check": "node scripts/check-poc-env.mjs"
