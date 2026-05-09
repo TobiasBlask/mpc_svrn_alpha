@@ -4,8 +4,14 @@ import hardhatToolboxMochaEthers from "@nomicfoundation/hardhat-toolbox-mocha-et
 
 dotenv.config({ path: ".env.poc" });
 
-const accounts = process.env.POC_DEPLOYER_PRIVATE_KEY
-  ? [process.env.POC_DEPLOYER_PRIVATE_KEY]
+const deployerPrivateKey = process.env.POC_DEPLOYER_PRIVATE_KEY
+  ? process.env.POC_DEPLOYER_PRIVATE_KEY.startsWith("0x")
+    ? process.env.POC_DEPLOYER_PRIVATE_KEY
+    : `0x${process.env.POC_DEPLOYER_PRIVATE_KEY}`
+  : "";
+
+const accounts = deployerPrivateKey
+  ? [deployerPrivateKey]
   : [];
 
 export default defineConfig({
