@@ -1,0 +1,11 @@
+{
+  "name": "mpc-private-access",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/validate-static.mjs",
+    "poc:wallet": "node scripts/generate-poc-wallet.mjs",
+    "poc:check": "node scripts/check-poc-env.mjs"
+  }
+}

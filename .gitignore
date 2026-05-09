@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+!.env.poc.example
+node_modules/
+package-lock.json
+.symphony-logs/
+.symphony-workspaces/
+dist/
