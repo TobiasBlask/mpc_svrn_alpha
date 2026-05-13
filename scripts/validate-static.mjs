@@ -2,7 +2,7 @@ import { access, readFile } from "node:fs/promises";
 
 const requiredFiles = [
   "index.html",
-  "assets/mpc-private-access-logo.svg"
+  "assets/svrn-alpha-private-access-logo.svg"
 ];
 
 for (const file of requiredFiles) {
@@ -12,10 +12,10 @@ for (const file of requiredFiles) {
 const html = await readFile("index.html", "utf8");
 
 const requiredText = [
-  "MPC Private Access",
-  "Deal Room",
+  "svrn alpha",
+  "Investment",
   "Portfolio",
-  "Compliance Review"
+  "Operations"
 ];
 
 for (const text of requiredText) {
